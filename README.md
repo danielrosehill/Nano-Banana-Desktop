@@ -1,5 +1,7 @@
 # Nano Banana Desktop
 
+![alt text](screenshots/v1/2.png)
+
 **⚠️ Work in Progress - v1.0.0 Release**
 
 A desktop image editing utility for Linux that leverages Google's Gemini Flash 2.5 Images (Nano Banana) for AI-powered image transformations.
@@ -9,10 +11,10 @@ This is an early-stage experimental project that provides a functional desktop i
 ## Project Status
 
 This v1.0.0 release represents a minimal viable product that demonstrates:
-- ✅ Working Gemini API integration for image transformations
-- ✅ Desktop GUI with tab-based workflow
-- ✅ Prompt template library for common edits
-- ✅ Basic image versioning and backup
+- Working Gemini API integration for image transformations
+- Desktop GUI with tab-based workflow
+- Prompt template library for common edits
+- Basic image versioning and backup
 
 **Future Plans:**
 - Support for additional API providers (Claude, Replicate, etc.)
@@ -34,17 +36,52 @@ This v1.0.0 release represents a minimal viable product that demonstrates:
 - Multiple aspect ratio support (1:1, 16:9, 21:9, 9:16)
 - Secure API key storage
 
+## Screenshots
+
+![alt text](screenshots/v1/8.png)
+
 ## Requirements
 
 - Python 3.10 or higher
 - Linux with KDE/Qt support
 - Google Gemini API key
 
-## Quick Start
+## Installation
+
+### Option 1: Install from .deb Package (Recommended for Ubuntu)
+
+Download and install the latest .deb package:
+
+```bash
+# Download the latest release from GitHub
+# Visit: https://github.com/danielrosehill/Nano-Banana-Desktop/releases
+
+# Install the package
+sudo dpkg -i nano-banana-desktop_1.0.0_amd64.deb
+
+# Fix dependencies if needed
+sudo apt-get install -f
+```
+
+After installation, run from terminal:
+```bash
+nano-banana-desktop
+```
+
+Or search for "Nano Banana Desktop" in your application menu.
+
+**Updating:**
+```bash
+./update-deb.sh  # Auto-downloads and installs latest release
+# OR
+./update-deb.sh path/to/new-package.deb  # Install specific package
+```
+
+### Option 2: Quick Start from Source
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/danielrosehill/Nano-Banana-Desktop.git
 cd Nano-Banana-Desktop
 ```
 
@@ -75,13 +112,32 @@ Coming soon!
 
 ## Building
 
-To build a standalone executable:
+### Build Standalone Executable
+
+To build a standalone PyInstaller executable:
 
 ```bash
 ./build.sh
 ```
 
 This will create a self-contained executable at `./dist/nano-banana-desktop` that can be run without needing Python installed.
+
+### Build .deb Package
+
+To build a Debian package for Ubuntu:
+
+```bash
+./build-deb.sh
+```
+
+This creates a `.deb` package at `./dist/nano-banana-desktop_1.0.0_amd64.deb` that can be distributed and installed on Ubuntu systems.
+
+The .deb package:
+- Installs to `/opt/nano-banana-desktop`
+- Creates launcher command `nano-banana-desktop`
+- Adds desktop entry to application menu
+- Manages virtual environment automatically
+- Handles dependencies through apt
 
 ## Development
 

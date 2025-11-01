@@ -1,0 +1,3 @@
+Help me to ideate some creative image to image prompts for this app idea which is a desktop image editing utilty which works with Nano Banana. 
+
+The objective is that the prompt library provides a wide range of options to accommodate the needs of different users: both the fundamental image to image transformations and some more creative (and specific) ones that try to leverage the potential of Nano Banana to its fullest. 
